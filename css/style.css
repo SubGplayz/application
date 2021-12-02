@@ -1,0 +1,383 @@
+/*---------------------------------------------
+  Font
+---------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/*---------------------------------------------
+  Utility
+---------------------------------------------*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+
+textarea:focus, input:focus {
+    border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+    color: transparent;
+}
+
+textarea:focus::-moz-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+input:-moz-placeholder {
+    color: #fff;
+}
+
+input::-moz-placeholder {
+    color: #fff;
+}
+
+input:-ms-input-placeholder {
+    color: #fff;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+
+textarea:-moz-placeholder {
+    color: #fff;
+}
+
+textarea::-moz-placeholder {
+    color: #fff;
+}
+
+textarea:-ms-input-placeholder {
+    color: #fff;
+}
+
+/*---------------------------------------------
+  Application Form
+---------------------------------------------*/
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.overlay-color {
+    background-image: linear-gradient(120deg, #0a0e19 1%, transparent 100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -12;
+    filter: blur(5px);
+}
+
+.application-form-container {
+    position: absolute;
+    width: 100%;  
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.application-form-wrap {
+    width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 55px;
+    background: #1e2833;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+
+.application-form-description {
+    margin: 0 20px 0 0;
+}
+
+.application-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.application-form-logo img {
+    width: 100%;
+}
+
+.application-form-title {
+    display: block;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 1.2;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.application-form-text {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.application-form-list {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+}
+
+form {
+    margin: 0 0 0 20px;
+}
+
+.wrap-input {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid rgba(255,255,255,0.24);
+    margin-bottom: 30px;
+}
+
+.input {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    padding: 0 5px 0 38px;
+}
+
+.focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background: #fff;
+}
+
+.focus-input::after {
+    font-family: Material-Design-Iconic-Font;
+    font-size: 22px;
+    color: #fff;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    padding-left: 5px;
+    transition: all 0.4s;
+}
+
+.textarea::after {
+    font-family: Material-Design-Iconic-Font;
+    font-size: 22px;
+    color: #fff;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: -7px;
+    left: 0px;
+    padding-left: 5px;
+    transition: all 0.4s;
+}
+
+.input:focus {
+    padding-left: 5px;
+}
+
+.input:focus + .focus-input::after {
+    top: -22px;
+    font-size: 18px;
+}
+
+.input:focus + .focus-input::before {
+    width: 100%;
+}
+
+.has-val.input + .focus-input::after {
+    top: -22px;
+    font-size: 18px;
+}
+
+.has-val.input + .focus-input::before {
+    width: 100%;
+}
+
+.has-val.input {
+    padding-left: 5px;
+}
+
+.wrap-input-check {
+    color: #ffffff;
+}
+
+.focus-check {
+    margin: 0;
+    display: contents;
+}
+
+.application-form-btn-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.application-form-btn {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.2;
+    background: #545b64;
+    border: solid 1px #788390;
+    border-radius: 2px;
+    padding: 0 20px;
+    height: 50px;
+}
+
+#form-messages {
+    margin-bottom: 30px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+#form-messages.error {
+    background-color: #ff3434;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+#form-messages.success {
+    background-color: #009200;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.label-alert {
+    background-color: #ff3434;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+    border-radius: 2px;
+}
+
+.label-alert i {
+    font-size: 20px;
+    margin-right: 10px;
+    vertical-align: sub;
+}
+
+.label-alert p {
+    margin: 0;
+}
+
+/*---------------------------------------------
+  Responsive
+---------------------------------------------*/
+
+@media (max-width: 767px) {
+    .application-form-description {
+        margin: 0;
+    }
+
+    form {
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .application-form-wrap {
+        padding: 55px 15px 37px 15px;
+    }
+}
+
+@media (max-width: 370px) {
+    .application-form-logo {
+        width: 100%;
+    }
+}
